@@ -1,0 +1,40 @@
+{
+  "id": "r3om8pcvhu",
+  "name": {
+    "tr": "Markalar",
+    "en": "Brands",
+    "ar": "العلامات"
+  },
+  "description": {
+    "tr": "Raflardaki kurgusal markalar, harf dizini ve arama.",
+    "en": "Fictional brands on our shelves, with letter index and search.",
+    "ar": "علامات افتراضية على رفوفنا مع فهرس الحروف والبحث."
+  },
+  "keyword": {
+    "tr": "marka",
+    "en": "brand",
+    "ar": "علامة"
+  },
+  "path": "referanslar",
+  "icon": "stars",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "j2cmgr",
+      "s6q5th"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Markalar",
+    "en": "Brands",
+    "ar": "العلامات"
+  },
+  "date": "2026-11-16T18:02:13.128Z",
+  "update": "2026-11-16T18:10:35.398Z"
+}
