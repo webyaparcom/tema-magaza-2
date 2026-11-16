@@ -1,0 +1,113 @@
+{
+  "data": [
+    {
+      "id": "vpb767tyh9",
+      "name": {
+        "tr": "Reyonlar",
+        "en": "Aisles",
+        "ar": "الممرات"
+      },
+      "description": {
+        "tr": "Mağaza planı ve kelimeyle reyon bulma.",
+        "en": "Store plan and aisle search by keyword.",
+        "ar": "مخطط المتجر والبحث عن الممر بالكلمة."
+      },
+      "path": "hizmetler",
+      "icon": "shelves",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "61vrw2",
+          "s6q5th"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "name": {
+        "tr": "Mağaza",
+        "en": "Store",
+        "ar": "المتجر"
+      },
+      "status": "play",
+      "id": "hakkimizda",
+      "path": "hakkimizda",
+      "category": "",
+      "url": "",
+      "index": 1,
+      "icon": "info",
+      "desing": {
+        "header": [],
+        "body": [
+          "sh2915",
+          "bn5q9s"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Raf kurallarımız ve mağaza panosu (kurgusal).",
+        "en": "Our shelf rules and store board (fictional).",
+        "ar": "قواعد الرفوف ولوحة المتجر (افتراضية)."
+      }
+    },
+    {
+      "id": "r3om8pcvhu",
+      "name": {
+        "tr": "Markalar",
+        "en": "Brands",
+        "ar": "العلامات"
+      },
+      "description": {
+        "tr": "Raflardaki kurgusal markalar, harf dizini ve arama.",
+        "en": "Fictional brands on our shelves, with letter index and search.",
+        "ar": "علامات افتراضية على رفوفنا مع فهرس الحروف والبحث."
+      },
+      "path": "referanslar",
+      "icon": "stars",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "j2cmgr",
+          "s6q5th"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "name": {
+        "tr": "İletişim",
+        "en": "Contact",
+        "ar": "اتصل بنا"
+      },
+      "status": "play",
+      "id": "iletisim",
+      "path": "iletisim",
+      "category": "",
+      "url": "",
+      "index": 3,
+      "icon": "call",
+      "desing": {
+        "header": [],
+        "body": [
+          "888hjh",
+          "k8mp01"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Adres, telefon, WhatsApp ve mağaza saatleri.",
+        "en": "Address, phone, WhatsApp and store hours.",
+        "ar": "العنوان والهاتف وواتساب وساعات المتجر."
+      }
+    }
+  ],
+  "desc": []
+}

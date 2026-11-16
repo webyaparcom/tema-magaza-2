@@ -1,0 +1,72 @@
+<section class="modulex-deger-raf-etiket{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-deger-raf-etiket-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* deger-raf-etiket — deger-not-kagidi panoya iğnelenmiş düz notlardır, deger-brutal sert çerçeveli karttır; bu modülde öğeler raydan iple sarkan kesik köşeli etiket iskeletidir (delik + ip + ray) ve etkileşim sarkaç salınımıdır. */
+  .modulex-deger-raf-etiket { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-deger-raf-etiket *, .modulex-deger-raf-etiket *::before, .modulex-deger-raf-etiket *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-deger-raf-etiket :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-deger-raf-etiket :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-deger-raf-etiket :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-deger-raf-etiket :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-deger-raf-etiket img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-deger-raf-etiket) img { height: auto; }
+  .modulex-deger-raf-etiket [hidden] { display: none !important; }
+  .modulex-deger-raf-etiket :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-deger-raf-etiket :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-deger-raf-etiket-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-deger-raf-etiket-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-deger-raf-etiket--bassiz .modulex-deger-raf-etiket-bas { display: none; }
+  .modulex-deger-raf-etiket-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-deger-raf-etiket-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-deger-raf-etiket-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-deger-raf-etiket-bas { max-width: 760px; }
+  .modulex-deger-raf-etiket-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-deger-raf-etiket-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-deger-raf-etiket-dugme:hover { transform: translateY(-2px); }
+  .modulex-deger-raf-etiket-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-deger-raf-etiket-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-deger-raf-etiket-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-deger-raf-etiket-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 34px 26px; }
+  .modulex-deger-raf-etiket-oge { position: relative; padding-block-start: 16px; }
+  .modulex-deger-raf-etiket-oge::before { content: ""; position: absolute; inset-block-start: 0; inset-inline: -14px; height: 10px; border-radius: 6px; background: linear-gradient(180deg, color-mix(in srgb, --text-- 30%, --bg--), color-mix(in srgb, --text-- 62%, --bg--)); box-shadow: 0 3px 6px -3px color-mix(in srgb, --text-- 60%, transparent); }
+  .modulex-deger-raf-etiket-asili { position: relative; display: grid; justify-items: center; transform-origin: 50% 0; transform: rotate(-1.6deg); transition: transform 0.5s ease; }
+  .modulex-deger-raf-etiket-oge:nth-child(even) .modulex-deger-raf-etiket-asili { transform: rotate(1.8deg); }
+  .modulex-deger-raf-etiket-oge:hover .modulex-deger-raf-etiket-asili, .modulex-deger-raf-etiket-oge:focus-within .modulex-deger-raf-etiket-asili { animation: modulex-deger-raf-etiket-salla 1.4s cubic-bezier(0.3, 0.6, 0.4, 1); }
+  .modulex-deger-raf-etiket-ip { width: 2px; height: 34px; background: color-mix(in srgb, --text-- 55%, --bg--); }
+  .modulex-deger-raf-etiket-levha { position: relative; display: grid; justify-items: center; gap: 8px; width: 100%; padding: 34px 22px 24px; background: --kartBg--; text-align: center; clip-path: polygon(30% 0, 70% 0, 100% 16%, 100% 100%, 0 100%, 0 16%); transition: background 0.3s ease; }
+  .modulex-deger-raf-etiket-levha::after { content: ""; position: absolute; inset: 8px; border: 1px dashed --cizgi--; clip-path: polygon(30% 0, 70% 0, 100% 15%, 100% 100%, 0 100%, 0 15%); pointer-events: none; }
+  .modulex-deger-raf-etiket-oge:nth-child(3n + 2) .modulex-deger-raf-etiket-levha { background: --vurguBg--; color: --vurguText--; }
+  .modulex-deger-raf-etiket-oge:nth-child(3n + 2) :is(.modulex-deger-raf-etiket-kmetin, .modulex-deger-raf-etiket-ikon, .modulex-deger-raf-etiket-damga) { color: inherit; border-color: currentColor; }
+  .modulex-deger-raf-etiket-delik { width: 16px; height: 16px; margin-block-start: -20px; border: 3px solid color-mix(in srgb, --text-- 45%, --bg--); border-radius: 50%; background: --bg--; }
+  .modulex-deger-raf-etiket-ikon { color: --accentInk--; font-size: 32px; }
+  .modulex-deger-raf-etiket-kbaslik { font-size: 1.2rem; font-weight: 800; line-height: 1.2; }
+  .modulex-deger-raf-etiket-kmetin { color: --muted--; font-size: 0.93rem; line-height: 1.6; }
+  .modulex-deger-raf-etiket-damga { margin-block-start: 6px; padding: 5px 12px; border: 2px dashed --accent--; border-radius: 6px; color: --accentInk--; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; transform: rotate(-3deg); }
+  @keyframes modulex-deger-raf-etiket-salla { 0% { transform: rotate(0deg); } 20% { transform: rotate(5deg); } 45% { transform: rotate(-3.5deg); } 70% { transform: rotate(1.8deg); } 100% { transform: rotate(0deg); } }
+  @media (max-width: 768px) {
+    .modulex-deger-raf-etiket-liste { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+    .modulex-deger-raf-etiket-oge::before { inset-inline: 0; }
+    .modulex-deger-raf-etiket-asili, .modulex-deger-raf-etiket-oge:nth-child(even) .modulex-deger-raf-etiket-asili { transform: rotate(-0.8deg); }
+  }
+  .modulex-deger-raf-etiket-bag { color: inherit; text-decoration: none; }
+  .modulex-deger-raf-etiket-bag::after { content: ""; position: absolute; inset: 0; z-index: 3; }
+  .modulex-deger-raf-etiket-bag:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-deger-raf-etiket :is(.modulex-deger-raf-etiket-baslik, .modulex-deger-raf-etiket-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-deger-raf-etiket-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-deger-raf-etiket { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-deger-raf-etiket *, .modulex-deger-raf-etiket *::before, .modulex-deger-raf-etiket *::after { animation: none !important; transition: none !important; }
+  }
+</style>

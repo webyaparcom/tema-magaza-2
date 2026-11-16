@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "Mağaza",
+    "en": "Store",
+    "ar": "المتجر"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hakkimizda",
+  "url": "",
+  "path": "hakkimizda",
+  "index": 1,
+  "icon": "info",
+  "desing": {
+    "header": [],
+    "body": [
+      "sh2915",
+      "bn5q9s"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Raf kurallarımız ve mağaza panosu (kurgusal).",
+    "en": "Our shelf rules and store board (fictional).",
+    "ar": "قواعد الرفوف ولوحة المتجر (افتراضية)."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Mağaza",
+    "en": "Store",
+    "ar": "المتجر"
+  },
+  "keyword": {
+    "tr": "hakkımızda",
+    "en": "about",
+    "ar": "من نحن"
+  },
+  "text": {},
+  "update": "2026-11-16T18:10:35.393Z",
+  "date": "2026-10-30"
+}

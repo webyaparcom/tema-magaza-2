@@ -1,0 +1,116 @@
+<footer class="modulex-alt-uygulama-dok{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-alt-uygulama-dok-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</footer>
+
+<style>
+  /* alt-uygulama-dok — Gezinme uygulama ızgarası, eylemler bir dok: simge büyütme komşu seçiciyle (:has) yalnız CSS, ipucu ölçeklenerek açılır; uygulama/oyun/girişim markalarına tanıdık mobil arayüz dili — kapsül veya ray kartlarından farklı olarak iki katmanlı ekran + dok. */
+  .modulex-alt-uygulama-dok { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-alt-uygulama-dok *, .modulex-alt-uygulama-dok *::before, .modulex-alt-uygulama-dok *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-alt-uygulama-dok :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-alt-uygulama-dok :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-alt-uygulama-dok :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-alt-uygulama-dok :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-alt-uygulama-dok img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-alt-uygulama-dok) img { height: auto; }
+  .modulex-alt-uygulama-dok [hidden] { display: none !important; }
+  .modulex-alt-uygulama-dok :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-alt-uygulama-dok :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-alt-uygulama-dok-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-alt-uygulama-dok-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-alt-uygulama-dok--bassiz .modulex-alt-uygulama-dok-bas { display: none; }
+  .modulex-alt-uygulama-dok-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-alt-uygulama-dok-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-alt-uygulama-dok-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-alt-uygulama-dok-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-alt-uygulama-dok-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-alt-uygulama-dok-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-uygulama-dok-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-alt-uygulama-dok-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-alt-uygulama-dok-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-alt-uygulama-dok-bag { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+  .modulex-alt-uygulama-dok-bag:hover { color: --accentInk--; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-alt-uygulama-dok-bag[aria-current="page"] { color: --accentInk--; font-weight: 700; }
+  .modulex-alt-uygulama-dok-logo { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+  .modulex-alt-uygulama-dok-logo img { width: auto; max-height: --logoH--; }
+  .modulex-alt-uygulama-dok-ad { font-family: var(--mx-font-heading, inherit); font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .modulex-alt-uygulama-dok-bbaslik { margin-block-end: 14px; color: --accentInk--; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .modulex-alt-uygulama-dok-sayfalar, .modulex-alt-uygulama-dok-baglantilar, .modulex-alt-uygulama-dok-iletisim, .modulex-alt-uygulama-dok-yasal { display: grid; gap: 9px; }
+  .modulex-alt-uygulama-dok-il { display: flex; align-items: flex-start; gap: 10px; }
+  .modulex-alt-uygulama-dok-il-ic { display: grid; gap: 2px; }
+  .modulex-alt-uygulama-dok-il-etiket { color: --muted--; font-size: 0.8rem; }
+  .modulex-alt-uygulama-dok-il-ikon { flex: none; color: --accentInk--; font-size: 20px; }
+  .modulex-alt-uygulama-dok-saatler { display: grid; gap: 6px; }
+  .modulex-alt-uygulama-dok-saat { display: flex; justify-content: space-between; gap: 16px; }
+  .modulex-alt-uygulama-dok-saat dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .modulex-alt-uygulama-dok-sosyal { display: flex; flex-wrap: wrap; gap: 10px; }
+  .modulex-alt-uygulama-dok-sosyal-a { display: inline-grid; place-items: center; width: 42px; height: 42px; border: 1px solid --cizgi--; border-radius: 50%; color: inherit; font-size: 18px; transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+  .modulex-alt-uygulama-dok-sosyal-a:hover { border-color: --accent--; background: --accent--; color: --accentText--; transform: translateY(-2px); }
+  .modulex-alt-uygulama-dok-hakkinda { max-width: 46ch; color: --muted--; }
+  .modulex-alt-uygulama-dok-telif { display: flex; flex-wrap: wrap; gap: 4px 14px; color: --muted--; font-size: 0.9rem; }
+  .modulex-alt-uygulama-dok-dil:empty { display: none; }
+  .modulex-alt-uygulama-dok-yukari { display: inline-grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 50%; background: --accent--; color: --accentText--; text-decoration: none; transition: transform 0.25s ease; }
+  .modulex-alt-uygulama-dok-yukari:hover { transform: translateY(-3px); }
+  .modulex-alt-uygulama-dok-bulten { display: grid; gap: 8px; }
+  .modulex-alt-uygulama-dok-nl-etiket { font-size: 0.9rem; font-weight: 700; }
+  .modulex-alt-uygulama-dok-nl-satir { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-alt-uygulama-dok-nl-girdi { flex: 1 1 200px; min-width: 0; min-height: 48px; padding: 10px 18px; border: 1px solid --cizgi--; border-radius: 999px; background: --bg--; color: --text--; font: inherit; }
+  .modulex-alt-uygulama-dok-nl-dugme { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 10px 22px; border: 0; border-radius: 999px; background: --accent--; color: --accentText--; font: inherit; font-weight: 700; transition: transform 0.2s ease; }
+  .modulex-alt-uygulama-dok-nl-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-uygulama-dok-nl-dugme .material-symbols-outlined { font-size: 18px; }
+  .modulex-alt-uygulama-dok-nl-durum:empty { display: none; }
+  .modulex-alt-uygulama-dok-nl-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+  .modulex-alt-uygulama-dok-nl-metin { color: --muted--; }
+
+  .modulex-alt-uygulama-dok-ud-ekran { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); padding: clamp(24px, 4vw, 44px) clamp(20px, 4vw, 44px) 68px; border-radius: calc(--yuvarlak-- * 2); background: linear-gradient(160deg, color-mix(in srgb, --accent-- 20%, --kartBg--), --kartBg-- 58%); box-shadow: inset 0 0 0 1px --cizgi--; }
+  .modulex-alt-uygulama-dok-ud-sol { display: grid; align-content: start; gap: 30px; }
+  .modulex-alt-uygulama-dok-ud-marka { display: grid; gap: 12px; }
+  .modulex-alt-uygulama-dok-ud-uygulamalar { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 22px 14px; }
+  .modulex-alt-uygulama-dok-ud-app { display: grid; justify-items: center; gap: 8px; color: inherit; text-align: center; text-decoration: none; }
+  .modulex-alt-uygulama-dok-ud-simge { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; background: --accent--; color: --accentText--; font-family: var(--mx-font-heading, inherit); font-size: 1.6rem; font-weight: 800; box-shadow: 0 10px 18px -12px color-mix(in srgb, --text-- 60%, transparent); transition: transform 0.3s cubic-bezier(0.3, 1.5, 0.6, 1); }
+  .modulex-alt-uygulama-dok-ud-uygulamalar li:nth-child(3n+2) .modulex-alt-uygulama-dok-ud-simge { background: --text--; color: --bg--; }
+  .modulex-alt-uygulama-dok-ud-uygulamalar li:nth-child(3n) .modulex-alt-uygulama-dok-ud-simge { background: color-mix(in srgb, --accent-- 30%, --bg--); color: --text--; }
+  .modulex-alt-uygulama-dok-ud-simge .material-symbols-outlined { font-size: 30px; }
+  .modulex-alt-uygulama-dok-ud-app:is(:hover, :focus-visible) .modulex-alt-uygulama-dok-ud-simge { animation: modulex-alt-uygulama-dok-ud-oyna 0.5s ease-in-out 2; }
+  @keyframes modulex-alt-uygulama-dok-ud-oyna { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-6deg); } 75% { transform: rotate(6deg); } }
+  .modulex-alt-uygulama-dok-ud-ad { max-width: 100%; font-size: 0.85rem; font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
+  .modulex-alt-uygulama-dok-ud-app[aria-current="page"] .modulex-alt-uygulama-dok-ud-ad { color: --accentInk--; font-weight: 800; }
+  .modulex-alt-uygulama-dok-ud-sag { display: grid; align-content: start; gap: 16px; }
+  .modulex-alt-uygulama-dok-blok--ud { padding: 18px 20px; border-radius: 22px; background: color-mix(in srgb, --kartBg-- 78%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 0 0 1px --cizgi--; transition: transform 0.3s ease; }
+  .modulex-alt-uygulama-dok-blok--ud:hover { transform: scale(1.015); }
+  .modulex-alt-uygulama-dok-ud-dok { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 14px; width: fit-content; max-width: 100%; margin: -40px auto 0; padding: 12px 16px; border-radius: 26px; background: color-mix(in srgb, --bg-- 72%, transparent); -webkit-backdrop-filter: blur(16px) saturate(1.3); backdrop-filter: blur(16px) saturate(1.3); box-shadow: 0 0 0 1px --cizgi--, 0 18px 40px -24px color-mix(in srgb, --text-- 60%, transparent); }
+  .modulex-alt-uygulama-dok-ud-dok-oge { position: relative; }
+  .modulex-alt-uygulama-dok-ud-dok-a { position: relative; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 17px; background: --accent--; color: --accentText--; text-decoration: none; transform-origin: 50% 100%; transition: transform 0.25s cubic-bezier(0.3, 1.5, 0.6, 1); }
+  .modulex-alt-uygulama-dok-ud-dok-a--ust { background: --text--; color: --bg--; }
+  .modulex-alt-uygulama-dok-ud-dok-a .material-symbols-outlined { font-size: 26px; }
+  .modulex-alt-uygulama-dok-ud-dok-oge:is(:hover, :focus-within) .modulex-alt-uygulama-dok-ud-dok-a { transform: scale(1.28) translateY(-4px); }
+  .modulex-alt-uygulama-dok-ud-dok-oge:has(+ .modulex-alt-uygulama-dok-ud-dok-oge:hover) .modulex-alt-uygulama-dok-ud-dok-a, .modulex-alt-uygulama-dok-ud-dok-oge:hover + .modulex-alt-uygulama-dok-ud-dok-oge .modulex-alt-uygulama-dok-ud-dok-a { transform: scale(1.12); }
+  .modulex-alt-uygulama-dok-ud-ipucu { position: absolute; inset-block-end: calc(100% + 12px); left: 50%; padding: 4px 10px; border-radius: 8px; background: --text--; color: --bg--; font-size: 0.78rem; font-weight: 700; white-space: nowrap; pointer-events: none; transform: translateX(-50%) scale(0); transform-origin: 50% 100%; transition: transform 0.2s ease; }
+  .modulex-alt-uygulama-dok-ud-dok-oge:is(:hover, :focus-within) .modulex-alt-uygulama-dok-ud-ipucu { transform: translateX(-50%) scale(1); }
+  .modulex-alt-uygulama-dok-ud-dip { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 26px; margin-block-start: 26px; text-align: center; }
+  .modulex-alt-uygulama-dok-ud-yasal { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; font-size: 0.9rem; }
+  @media (max-width: 1024px) {
+    .modulex-alt-uygulama-dok-ud-ekran { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .modulex-alt-uygulama-dok-ud-ekran { padding-block-end: 60px; }
+    .modulex-alt-uygulama-dok-ud-uygulamalar { grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); }
+    .modulex-alt-uygulama-dok-ud-dok { gap: 10px; padding: 10px 12px; }
+    .modulex-alt-uygulama-dok-ud-dok-a { width: 50px; height: 50px; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-uygulama-dok :is(.modulex-alt-uygulama-dok-baslik, .modulex-alt-uygulama-dok-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-uygulama-dok-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-alt-uygulama-dok { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-alt-uygulama-dok *, .modulex-alt-uygulama-dok *::before, .modulex-alt-uygulama-dok *::after { animation: none !important; transition: none !important; }
+  }
+</style>

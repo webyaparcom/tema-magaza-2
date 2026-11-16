@@ -1,0 +1,123 @@
+<section class="modulex-iletisim-ust-bant-alt-kart{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-iletisim-ust-bant-alt-kart-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* iletisim-ust-bant-alt-kart — iletisim-vurgu-bant durağan renk bandında sütunlar dizer; bu modül KAYAN BANT (marquee: iki kopya grup, translateX(-50%) döngü, RTL'de ters keyframes, hover'da paused) + birleşik çizgili (negatif margin) kart ızgarası ve kopyala düğmesi — duyuru şeridi gibi. */
+  .modulex-iletisim-ust-bant-alt-kart { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-iletisim-ust-bant-alt-kart *, .modulex-iletisim-ust-bant-alt-kart *::before, .modulex-iletisim-ust-bant-alt-kart *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-iletisim-ust-bant-alt-kart :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-iletisim-ust-bant-alt-kart :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-iletisim-ust-bant-alt-kart :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-iletisim-ust-bant-alt-kart :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-iletisim-ust-bant-alt-kart img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-iletisim-ust-bant-alt-kart) img { height: auto; }
+  .modulex-iletisim-ust-bant-alt-kart [hidden] { display: none !important; }
+  .modulex-iletisim-ust-bant-alt-kart :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-iletisim-ust-bant-alt-kart :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-iletisim-ust-bant-alt-kart-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-iletisim-ust-bant-alt-kart-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-iletisim-ust-bant-alt-kart--bassiz .modulex-iletisim-ust-bant-alt-kart-bas { display: none; }
+  .modulex-iletisim-ust-bant-alt-kart-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-iletisim-ust-bant-alt-kart-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-iletisim-ust-bant-alt-kart-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-iletisim-ust-bant-alt-kart-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-iletisim-ust-bant-alt-kart-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-iletisim-ust-bant-alt-kart-dugme:hover { transform: translateY(-2px); }
+  .modulex-iletisim-ust-bant-alt-kart-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-iletisim-ust-bant-alt-kart-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-iletisim-ust-bant-alt-kart-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-iletisim-ust-bant-alt-kart-bantli { display: grid; gap: clamp(24px, 4vw, 40px); }
+  .modulex-iletisim-ust-bant-alt-kart-bant { overflow: hidden; padding-block: 16px; border-radius: 999px; background: --vurguBg--; color: --vurguText--; }
+  .modulex-iletisim-ust-bant-alt-kart-iz { display: flex; inline-size: max-content; animation: modulex-iletisim-ust-bant-alt-kart-kay2 32s linear infinite; }
+  .modulex-iletisim-ust-bant-alt-kart-bant:hover .modulex-iletisim-ust-bant-alt-kart-iz { animation-play-state: paused; }
+  @keyframes modulex-iletisim-ust-bant-alt-kart-kay2 { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes modulex-iletisim-ust-bant-alt-kart-kay2r { from { transform: translateX(0); } to { transform: translateX(50%); } }
+  [dir="rtl"] .modulex-iletisim-ust-bant-alt-kart-iz, :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-ust-bant-alt-kart-iz { animation-name: modulex-iletisim-ust-bant-alt-kart-kay2r; }
+  .modulex-iletisim-ust-bant-alt-kart-izgrup { display: flex; flex: none; gap: 44px; padding-inline-end: 44px; }
+  .modulex-iletisim-ust-bant-alt-kart-boge { display: inline-flex; align-items: center; gap: 10px; font-size: 1.15rem; font-weight: 750; white-space: nowrap; }
+  .modulex-iletisim-ust-bant-alt-kart-boik { font-size: 22px; }
+  .modulex-iletisim-ust-bant-alt-kart-bbas { display: grid; gap: 12px; max-inline-size: 760px; }
+  .modulex-iletisim-ust-bant-alt-kart-bkartlar { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); overflow: hidden; border: 1px solid --cizgi--; border-radius: --yuvarlak--; }
+  .modulex-iletisim-ust-bant-alt-kart-bkart { display: grid; align-content: start; gap: 12px; min-width: 0; margin-block-end: -1px; margin-inline-end: -1px; padding: clamp(20px, 3vw, 30px); border-block-end: 1px solid --cizgi--; border-inline-end: 1px solid --cizgi--; transition: background 0.3s ease; }
+  .modulex-iletisim-ust-bant-alt-kart-bkart:hover { background: color-mix(in srgb, --accent-- 6%, transparent); }
+  .modulex-iletisim-ust-bant-alt-kart-bkust { display: flex; align-items: center; gap: 10px; }
+  .modulex-iletisim-ust-bant-alt-kart-bkik { color: --accentInk--; font-size: 22px; transition: transform 0.3s ease; }
+  .modulex-iletisim-ust-bant-alt-kart-bkart:hover .modulex-iletisim-ust-bant-alt-kart-bkik { transform: translateY(-3px); }
+  .modulex-iletisim-ust-bant-alt-kart-bkdeg { color: inherit; font-family: var(--mx-font-heading, inherit); font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 750; line-height: 1.3; text-decoration: none; overflow-wrap: anywhere; transition: color 0.2s ease; }
+  a.modulex-iletisim-ust-bant-alt-kart-bkdeg:hover { color: --accentInk--; }
+  .modulex-iletisim-ust-bant-alt-kart-bkalt { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-block-start: auto; }
+  @media (max-width: 768px) {
+    .modulex-iletisim-ust-bant-alt-kart-bant { border-radius: 14px; padding-block: 12px; }
+    .modulex-iletisim-ust-bant-alt-kart-boge { font-size: 1rem; }
+  }
+  .modulex-iletisim-ust-bant-alt-kart-kikon { flex: none; display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: color-mix(in srgb, --accent-- 14%, transparent); color: --accentInk--; font-size: 24px; }
+  .modulex-iletisim-ust-bant-alt-kart-ketiket { display: block; color: --muted--; font-size: 0.82rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; }
+  .modulex-iletisim-ust-bant-alt-kart-deger { color: inherit; font-weight: 650; text-decoration: none; overflow-wrap: anywhere; transition: color 0.2s ease; }
+  a.modulex-iletisim-ust-bant-alt-kart-deger:hover { color: --accentInk--; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-iletisim-ust-bant-alt-kart-eylem { display: inline-flex; align-items: center; gap: 6px; color: --accentInk--; font-weight: 700; text-decoration: none; transition: gap 0.2s ease; }
+  .modulex-iletisim-ust-bant-alt-kart-eylem:hover { gap: 10px; }
+  .modulex-iletisim-ust-bant-alt-kart-eylem .material-symbols-outlined { font-size: 18px; }
+  .modulex-iletisim-ust-bant-alt-kart-kopya { display: none; align-items: center; gap: 6px; min-height: 36px; padding: 6px 12px; border: 1px solid --cizgi--; border-radius: 999px; background: transparent; color: --text--; font: inherit; font-size: 0.85rem; font-weight: 650; transition: border-color 0.2s ease, background 0.2s ease; }
+  .modulex-iletisim-ust-bant-alt-kart--kjs .modulex-iletisim-ust-bant-alt-kart-kopya { display: inline-flex; }
+  .modulex-iletisim-ust-bant-alt-kart-kopya:hover { border-color: --accent--; }
+  .modulex-iletisim-ust-bant-alt-kart-kopya .material-symbols-outlined { font-size: 18px; }
+  .modulex-iletisim-ust-bant-alt-kart--kopyalandi { background: color-mix(in srgb, --accent-- 14%, transparent); }
+  .modulex-iletisim-ust-bant-alt-kart-sosyal { display: grid; gap: 10px; }
+  .modulex-iletisim-ust-bant-alt-kart-sbaslik { color: --muted--; font-size: 0.9rem; font-weight: 650; }
+  .modulex-iletisim-ust-bant-alt-kart-sliste { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-iletisim-ust-bant-alt-kart-cip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 8px 14px; border: 1px solid --cizgi--; border-radius: 999px; color: inherit; font-weight: 650; text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease; }
+  .modulex-iletisim-ust-bant-alt-kart-cip:hover { border-color: --accent--; transform: translateY(-2px); }
+  .modulex-iletisim-ust-bant-alt-kart-cikon { font-size: 18px; }
+  .modulex-iletisim-ust-bant-alt-kart-harita { position: relative; overflow: hidden; min-height: 280px; border-radius: --yuvarlak--; background: --kartBg--; }
+  .modulex-iletisim-ust-bant-alt-kart-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .modulex-iletisim-ust-bant-alt-kart-hdesen { position: absolute; inset: 0; display: grid; place-items: center; background-color: color-mix(in srgb, --accent-- 8%, --kartBg--); background-image: linear-gradient(color-mix(in srgb, --text-- 7%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, --text-- 7%, transparent) 1px, transparent 1px), radial-gradient(circle at 30% 40%, color-mix(in srgb, --accent-- 18%, transparent) 0 18%, transparent 19%); background-size: 36px 36px, 36px 36px, 100% 100%; }
+  .modulex-iletisim-ust-bant-alt-kart-pin { color: --accentInk--; font-size: 56px; animation: modulex-iletisim-ust-bant-alt-kart-zipla 2.4s ease-in-out infinite; }
+  @keyframes modulex-iletisim-ust-bant-alt-kart-zipla { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .modulex-iletisim-ust-bant-alt-kart-hyol { position: absolute; inset-block-end: 16px; inset-inline-start: 16px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border-radius: 999px; background: --bg--; color: --text--; font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px color-mix(in srgb, --text-- 16%, transparent); transition: transform 0.2s ease; }
+  .modulex-iletisim-ust-bant-alt-kart-hyol:hover { transform: translateY(-2px); }
+  .modulex-iletisim-ust-bant-alt-kart-hyol .material-symbols-outlined { font-size: 18px; color: --accentInk--; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-ust-bant-alt-kart :is(.modulex-iletisim-ust-bant-alt-kart-baslik, .modulex-iletisim-ust-bant-alt-kart-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-ust-bant-alt-kart-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-iletisim-ust-bant-alt-kart { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-iletisim-ust-bant-alt-kart *, .modulex-iletisim-ust-bant-alt-kart *::before, .modulex-iletisim-ust-bant-alt-kart *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-iletisim-ust-bant-alt-kart";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const kopyala = (s, P) => {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) return;
+        s.classList.add(P + "--kjs");
+        s.querySelectorAll("[data-kopyala]").forEach((b) => {
+          const yazi = b.querySelector("." + P + "-kyazi");
+          const ilk = yazi ? yazi.textContent : "";
+          b.addEventListener("click", () => {
+            const bitti = () => {
+              b.classList.add(P + "--kopyalandi");
+              if (yazi) yazi.textContent = b.dataset.tamam || ilk;
+              setTimeout(() => { b.classList.remove(P + "--kopyalandi"); if (yazi) yazi.textContent = ilk; }, 2000);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(b.dataset.kopyala).then(bitti, () => {});
+          });
+        });
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      kopyala(s, P, az);
+    });
+  })();
+</script>

@@ -1,0 +1,40 @@
+{
+  "id": "vpb767tyh9",
+  "name": {
+    "tr": "Reyonlar",
+    "en": "Aisles",
+    "ar": "الممرات"
+  },
+  "description": {
+    "tr": "Mağaza planı ve kelimeyle reyon bulma.",
+    "en": "Store plan and aisle search by keyword.",
+    "ar": "مخطط المتجر والبحث عن الممر بالكلمة."
+  },
+  "keyword": {
+    "tr": "reyon, mağaza planı",
+    "en": "aisle, store map",
+    "ar": "ممر، خريطة المتجر"
+  },
+  "path": "hizmetler",
+  "icon": "shelves",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "61vrw2",
+      "s6q5th"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Reyonlar",
+    "en": "Aisles",
+    "ar": "الممرات"
+  },
+  "date": "2026-11-16T18:02:13.116Z",
+  "update": "2026-11-16T18:10:35.387Z"
+}

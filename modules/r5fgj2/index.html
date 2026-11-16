@@ -1,0 +1,128 @@
+<section class="modulex-acilis-urun-nokta{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-acilis-urun-nokta-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* acilis-urun-nokta — acilis-rozet-etiket görsel köşesine sabit rozet koyar, acilis-bolunmus görseli düz sütuna alır; bu modül maddeleri görselin üstünde koordinatlı tıklanabilir işaretlere çevirir (aria-expanded balon, Escape) — görsel piksele bağlı olduğundan işaret konumu RTL'de aynalanmaz, balon yönü konuma göre seçilir. */
+  .modulex-acilis-urun-nokta { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-acilis-urun-nokta *, .modulex-acilis-urun-nokta *::before, .modulex-acilis-urun-nokta *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-acilis-urun-nokta :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-acilis-urun-nokta :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-acilis-urun-nokta :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-acilis-urun-nokta :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-acilis-urun-nokta img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-acilis-urun-nokta) img { height: auto; }
+  .modulex-acilis-urun-nokta [hidden] { display: none !important; }
+  .modulex-acilis-urun-nokta :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-acilis-urun-nokta :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-acilis-urun-nokta-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-acilis-urun-nokta-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-acilis-urun-nokta--bassiz .modulex-acilis-urun-nokta-bas { display: none; }
+  .modulex-acilis-urun-nokta-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-acilis-urun-nokta-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-acilis-urun-nokta-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-acilis-urun-nokta-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-acilis-urun-nokta-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-acilis-urun-nokta-dugme:hover { transform: translateY(-2px); }
+  .modulex-acilis-urun-nokta-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-acilis-urun-nokta-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-acilis-urun-nokta-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-acilis-urun-nokta-duzen { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+  .modulex-acilis-urun-nokta-duzen--tek { grid-template-columns: minmax(0, 1fr); max-width: 820px; }
+  .modulex-acilis-urun-nokta-yazi { display: grid; gap: 20px; justify-items: start; min-width: 0; }
+  .modulex-acilis-urun-nokta-vitrin { display: grid; gap: 22px; min-width: 0; }
+  .modulex-acilis-urun-nokta-leke { position: relative; inline-size: min(100%, 560px); margin-inline: auto; aspect-ratio: 1; }
+  .modulex-acilis-urun-nokta-lzemin { position: absolute; inset: 2%; border-radius: 62% 38% 46% 54% / 48% 40% 60% 52%; background-color: color-mix(in srgb, --accent-- 16%, --bg--); animation: modulex-acilis-urun-nokta-leke 14s ease-in-out infinite alternate; }
+  @keyframes modulex-acilis-urun-nokta-leke { 50% { border-radius: 40% 60% 58% 42% / 56% 46% 54% 44%; transform: rotate(8deg); } 100% { border-radius: 52% 48% 38% 62% / 42% 58% 42% 58%; transform: rotate(-6deg); } }
+  .modulex-acilis-urun-nokta-ufoto { position: absolute; inset: 9%; inline-size: 82%; block-size: 82%; object-fit: cover; border-radius: 46% 54% 50% 50% / 50% 46% 54% 50%; box-shadow: 0 40px 70px -40px color-mix(in srgb, --text-- 80%, transparent); }
+  .modulex-acilis-urun-nokta-nk { position: absolute; inset-block-start: var(--y); inset-inline-start: var(--x); inline-size: 0; block-size: 0; z-index: 1; }
+  [dir="rtl"] .modulex-acilis-urun-nokta-nk { inset-inline-start: auto; inset-inline-end: var(--x); }
+  .modulex-acilis-urun-nokta-nokta { position: absolute; inset-block-start: -19px; inset-inline-start: -19px; display: grid; place-items: center; inline-size: 38px; block-size: 38px; padding: 0; border: 3px solid --bg--; border-radius: 50%; background-color: --accent--; color: --accentText--; font: inherit; font-size: 0.85rem; font-weight: 800; box-shadow: 0 8px 20px -6px color-mix(in srgb, --text-- 60%, transparent); animation: modulex-acilis-urun-nokta-halka 2.2s ease-out infinite; transition: transform 0.2s ease, background-color 0.2s ease; }
+  @keyframes modulex-acilis-urun-nokta-halka { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, --accent-- 55%, transparent); } 100% { box-shadow: 0 0 0 16px transparent; } }
+  .modulex-acilis-urun-nokta-nokta:hover, .modulex-acilis-urun-nokta-nokta[aria-expanded="true"] { transform: scale(1.15); background-color: --text--; color: --bg--; }
+  .modulex-acilis-urun-nokta-nokta:focus-visible { outline: 3px solid --text--; outline-offset: 3px; }
+  .modulex-acilis-urun-nokta-balon { position: absolute; inset-block-start: -28px; display: grid; gap: 2px; inline-size: max-content; max-inline-size: 210px; padding: 10px 14px; border-radius: 12px; background-color: --text--; color: --bg--; box-shadow: 0 20px 40px -20px color-mix(in srgb, --text-- 80%, transparent); animation: modulex-acilis-urun-nokta-gir 0.35s ease both; }
+  .modulex-acilis-urun-nokta-balon--sag { inset-inline-start: 28px; }
+  [dir="rtl"] .modulex-acilis-urun-nokta-balon--sag { inset-inline-start: auto; inset-inline-end: 28px; }
+  .modulex-acilis-urun-nokta-balon--sol { inset-inline-end: 28px; }
+  [dir="rtl"] .modulex-acilis-urun-nokta-balon--sol { inset-inline-end: auto; inset-inline-start: 28px; }
+  .modulex-acilis-urun-nokta-bdeger { font-size: 1.15rem; font-weight: 800; }
+  .modulex-acilis-urun-nokta-bmetin { font-size: 0.88rem; }
+  .modulex-acilis-urun-nokta-lejant { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+  .modulex-acilis-urun-nokta-lj { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid --cizgi--; border-radius: 12px; transition: border-color 0.25s ease; }
+  .modulex-acilis-urun-nokta-lj:hover { border-color: --accent--; }
+  .modulex-acilis-urun-nokta-ljno { display: inline-grid; flex: none; place-items: center; inline-size: 28px; block-size: 28px; border-radius: 50%; background-color: --accent--; color: --accentText--; font-size: 0.8rem; font-weight: 800; }
+  .modulex-acilis-urun-nokta-ljikon { color: --accentInk--; font-size: 20px; }
+  .modulex-acilis-urun-nokta-ljyazi { display: grid; min-width: 0; }
+  .modulex-acilis-urun-nokta-ljmetin { font-size: 0.9rem; font-weight: 650; line-height: 1.3; }
+  .modulex-acilis-urun-nokta-ljdeger { color: --accentInk--; font-weight: 800; }
+  @media (min-width: 769px) {
+    .modulex-acilis-urun-nokta--njs .modulex-acilis-urun-nokta-vitrin .modulex-acilis-urun-nokta-lejant { display: none; }
+  }
+  @media (max-width: 1024px) {
+    .modulex-acilis-urun-nokta-duzen { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .modulex-acilis-urun-nokta-nokta { inset-block-start: -16px; inset-inline-start: -16px; inline-size: 32px; block-size: 32px; }
+    .modulex-acilis-urun-nokta-balon { max-inline-size: 160px; padding: 8px 10px; }
+  }
+  .modulex-acilis-urun-nokta-h1 { font-family: var(--mx-font-heading, inherit); font-size: clamp(2.3rem, 5.2vw, 4.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; text-wrap: balance; }
+  .modulex-acilis-urun-nokta-metin { color: --muted--; font-size: clamp(1.02rem, 1.3vw, 1.18rem); line-height: 1.7; max-width: 62ch; }
+  .modulex-acilis-urun-nokta-ogeler { display: flex; flex-wrap: wrap; gap: 14px 30px; }
+  .modulex-acilis-urun-nokta-oge { display: flex; align-items: center; gap: 10px; }
+  .modulex-acilis-urun-nokta-oikon { color: --accentInk--; font-size: 22px; }
+  .modulex-acilis-urun-nokta-odeger { font-size: 1.45rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+  .modulex-acilis-urun-nokta-ometin { color: --muted--; font-size: 0.95rem; }
+  .modulex-acilis-urun-nokta-obag { color: inherit; text-underline-offset: 3px; }
+  .modulex-acilis-urun-nokta-gir { animation: modulex-acilis-urun-nokta-gir 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  @keyframes modulex-acilis-urun-nokta-gir { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-acilis-urun-nokta-h1 { letter-spacing: 0; line-height: 1.3; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-acilis-urun-nokta :is(.modulex-acilis-urun-nokta-baslik, .modulex-acilis-urun-nokta-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-acilis-urun-nokta-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-acilis-urun-nokta { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-acilis-urun-nokta *, .modulex-acilis-urun-nokta *::before, .modulex-acilis-urun-nokta *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-acilis-urun-nokta";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const noktaAc = (s, P) => {
+        const b = [...s.querySelectorAll("button[data-nokta]")];
+        if (!b.length) return;
+        s.classList.add(P + "--njs");
+        const balon = (x) => document.getElementById(x.getAttribute("aria-controls") || "");
+        const kapat = (x) => { x.setAttribute("aria-expanded", "false"); const p = balon(x); if (p) p.hidden = true; };
+        b.forEach((x) => x.addEventListener("click", () => {
+          const acik = x.getAttribute("aria-expanded") === "true";
+          b.forEach(kapat);
+          if (acik) return;
+          x.setAttribute("aria-expanded", "true");
+          const p = balon(x);
+          if (p) p.hidden = false;
+        }));
+        s.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") return;
+          const a = b.find((x) => x.getAttribute("aria-expanded") === "true");
+          b.forEach(kapat);
+          if (a) a.focus();
+        });
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      noktaAc(s, P, az);
+    });
+  })();
+</script>

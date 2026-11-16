@@ -1,0 +1,144 @@
+<section class="modulex-sayac-bento-karo{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-sayac-bento-karo-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* sayac-bento-karo — sayac-mozaik değişken genişlikli statik renkli karolar, sayac-kart-ikon eşit kartlardır; bu modül açılır karolu bir KPI panosudur — <details> karolar tıklanınca ızgarada tam satıra genişler ve ayrıntı katmanı gösterir (ajans raporu dili). */
+  .modulex-sayac-bento-karo { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-sayac-bento-karo *, .modulex-sayac-bento-karo *::before, .modulex-sayac-bento-karo *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-sayac-bento-karo :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-sayac-bento-karo :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-sayac-bento-karo :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-sayac-bento-karo :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-sayac-bento-karo img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-sayac-bento-karo) img { height: auto; }
+  .modulex-sayac-bento-karo [hidden] { display: none !important; }
+  .modulex-sayac-bento-karo :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-sayac-bento-karo :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-sayac-bento-karo-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-sayac-bento-karo-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-sayac-bento-karo--bassiz .modulex-sayac-bento-karo-bas { display: none; }
+  .modulex-sayac-bento-karo-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-sayac-bento-karo-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-sayac-bento-karo-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-sayac-bento-karo-bas { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px 48px; align-items: end; }
+  .modulex-sayac-bento-karo-ust { grid-column: 1 / -1; }
+  .modulex-sayac-bento-karo-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-sayac-bento-karo-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-sayac-bento-karo-dugme:hover { transform: translateY(-2px); }
+  .modulex-sayac-bento-karo-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-sayac-bento-karo-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-sayac-bento-karo-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-sayac-bento-karo-bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: minmax(170px, auto); grid-auto-flow: row dense; gap: 14px; }
+  .modulex-sayac-bento-karo-karo { position: relative; display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid --cizgi--; border-radius: --yuvarlak--; background: --kartBg--; transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
+  .modulex-sayac-bento-karo-karo--iri { grid-column: span 2; grid-row: span 2; border-color: transparent; background: --vurguBg--; color: --vurguText--; }
+  .modulex-sayac-bento-karo-karo--genis { grid-column: span 2; }
+  .modulex-sayac-bento-karo-karo--uzun { grid-row: span 2; }
+  .modulex-sayac-bento-karo-karo[open] { grid-column: 1 / -1; box-shadow: 0 24px 50px -30px color-mix(in srgb, --text-- 50%, transparent); }
+  .modulex-sayac-bento-karo[data-karo-acik] .modulex-sayac-bento-karo-karo:not([open]) { opacity: 0.5; }
+  .modulex-sayac-bento-karo-karo:hover { transform: translateY(-3px); }
+  .modulex-sayac-bento-karo-karo-ust { display: flex; flex: 1; flex-direction: column; gap: 10px; padding: clamp(18px, 2.4vw, 28px); list-style: none; }
+  .modulex-sayac-bento-karo-karo-ust::-webkit-details-marker { display: none; }
+  .modulex-sayac-bento-karo-karo-bas { display: flex; align-items: center; justify-content: space-between; margin-block-end: auto; padding-block-end: 14px; }
+  .modulex-sayac-bento-karo-ikon { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: color-mix(in srgb, currentColor 12%, transparent); font-size: 22px; }
+  .modulex-sayac-bento-karo-karo-ac { position: relative; width: 30px; height: 30px; border: 1.5px solid currentColor; border-radius: 50%; opacity: 0.6; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .modulex-sayac-bento-karo-karo-ac::before, .modulex-sayac-bento-karo-karo-ac::after { content: ""; position: absolute; inset-block-start: calc(50% - 1px); inset-inline-start: 25%; width: 50%; height: 2px; border-radius: 2px; background: currentColor; }
+  .modulex-sayac-bento-karo-karo-ac::after { transform: rotate(90deg); transition: transform 0.3s ease; }
+  .modulex-sayac-bento-karo-karo:hover .modulex-sayac-bento-karo-karo-ac { opacity: 1; }
+  .modulex-sayac-bento-karo-karo[open] .modulex-sayac-bento-karo-karo-ac { opacity: 1; transform: rotate(180deg); }
+  .modulex-sayac-bento-karo-karo[open] .modulex-sayac-bento-karo-karo-ac::after { transform: rotate(0deg); }
+  .modulex-sayac-bento-karo-kpi { display: block; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; line-height: 1; }
+  .modulex-sayac-bento-karo-karo--iri .modulex-sayac-bento-karo-kpi { font-size: clamp(3.2rem, 7vw, 5.6rem); }
+  .modulex-sayac-bento-karo-ek { color: --accentInk--; font-size: 0.55em; }
+  .modulex-sayac-bento-karo-etiket { font-size: 1rem; font-weight: 650; line-height: 1.3; }
+  .modulex-sayac-bento-karo-karo--iri .modulex-sayac-bento-karo-etiket { font-size: 1.25rem; }
+  .modulex-sayac-bento-karo-ayrinti { display: grid; gap: 10px; padding: 0 clamp(18px, 2.4vw, 28px) clamp(18px, 2.4vw, 28px); animation: modulex-sayac-bento-karo-ac 0.35s ease backwards; }
+  .modulex-sayac-bento-karo-olcer { height: 6px; max-width: 520px; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, currentColor 14%, transparent); }
+  .modulex-sayac-bento-karo-olcer span { display: block; width: calc(var(--o) * 100%); height: 100%; border-radius: inherit; background: currentColor; }
+  .modulex-sayac-bento-karo-sira { color: --muted--; font-family: var(--mx-font-mono, ui-monospace, monospace); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; }
+  .modulex-sayac-bento-karo-not { max-width: 60ch; color: --muted--; font-size: 0.95rem; }
+  .modulex-sayac-bento-karo-karo--iri :is(.modulex-sayac-bento-karo-ek, .modulex-sayac-bento-karo-sira, .modulex-sayac-bento-karo-not) { color: inherit; }
+  @keyframes modulex-sayac-bento-karo-ac { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 1024px) {
+    .modulex-sayac-bento-karo-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 768px) {
+    .modulex-sayac-bento-karo-bento { grid-auto-rows: minmax(140px, auto); gap: 10px; }
+    .modulex-sayac-bento-karo-karo--uzun { grid-row: span 1; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-sayac-bento-karo :is(.modulex-sayac-bento-karo-baslik, .modulex-sayac-bento-karo-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-sayac-bento-karo-baslik { line-height: 1.35; }
+  @media (max-width: 1024px) {
+    .modulex-sayac-bento-karo-bas { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .modulex-sayac-bento-karo { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-sayac-bento-karo *, .modulex-sayac-bento-karo *::before, .modulex-sayac-bento-karo *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-sayac-bento-karo";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const sayac = (s, P, az) => {
+        const el = [...s.querySelectorAll("[data-hedef]")];
+        if (!el.length || az || !("IntersectionObserver" in window)) return;
+        const dl = document.documentElement.lang || undefined;
+        const oynat = () => el.forEach((e) => {
+          const h = Number(e.dataset.hedef);
+          const od = Number(e.dataset.ondalik) || 0;
+          const son = e.textContent;
+          if (!Number.isFinite(h)) return;
+          let f;
+          try { f = new Intl.NumberFormat(dl, { minimumFractionDigits: od, maximumFractionDigits: od }); } catch (x) { return; }
+          const t0 = performance.now();
+          const adim = (t) => {
+            const p = Math.min(1, (t - t0) / 1300);
+            e.textContent = p < 1 ? f.format(h * (1 - Math.pow(1 - p, 3))) : son;
+            if (p < 1) requestAnimationFrame(adim);
+          };
+          requestAnimationFrame(adim);
+        });
+        const io = new IntersectionObserver((gs) => {
+          gs.forEach((g) => { if (g.isIntersecting) { oynat(); io.disconnect(); } });
+        }, { threshold: 0.3 });
+        io.observe(s);
+      };
+    const karo = (s, P, az) => {
+        const k = [...s.querySelectorAll("details[data-karo]")];
+        if (!k.length) return;
+        k.forEach((d) => d.addEventListener("toggle", () => {
+          if (d.open) {
+            k.forEach((x) => { if (x !== d && x.open) x.open = false; });
+            s.dataset.karoAcik = "1";
+            const r = d.getBoundingClientRect();
+            if (r.bottom > window.innerHeight || r.top < 0) d.scrollIntoView({ block: "nearest", behavior: az ? "auto" : "smooth" });
+          } else if (!k.some((x) => x.open)) delete s.dataset.karoAcik;
+        }));
+        s.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") return;
+          const a = k.find((x) => x.open);
+          if (!a) return;
+          a.open = false;
+          const oz = a.querySelector("summary");
+          if (oz) oz.focus();
+        });
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      sayac(s, P, az);
+      karo(s, P, az);
+    });
+  })();
+</script>

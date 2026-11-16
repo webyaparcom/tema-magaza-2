@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "İletişim",
+    "en": "Contact",
+    "ar": "اتصل بنا"
+  },
+  "status": "play",
+  "category": "",
+  "id": "iletisim",
+  "url": "",
+  "path": "iletisim",
+  "index": 3,
+  "icon": "call",
+  "desing": {
+    "header": [],
+    "body": [
+      "888hjh",
+      "k8mp01"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Adres, telefon, WhatsApp ve mağaza saatleri.",
+    "en": "Address, phone, WhatsApp and store hours.",
+    "ar": "العنوان والهاتف وواتساب وساعات المتجر."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "İletişim",
+    "en": "Contact",
+    "ar": "اتصل بنا"
+  },
+  "keyword": {
+    "tr": "iletişim",
+    "en": "contact",
+    "ar": "اتصال"
+  },
+  "text": {},
+  "update": "2026-11-16T18:10:35.402Z",
+  "date": "2026-10-30"
+}
