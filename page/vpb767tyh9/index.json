@@ -3,17 +3,23 @@
   "name": {
     "tr": "Reyonlar",
     "en": "Aisles",
-    "ar": "الممرات"
+    "ar": "الممرات",
+    "de": "Gänge",
+    "ru": "Отделы"
   },
   "description": {
     "tr": "Mağaza planı ve kelimeyle reyon bulma.",
     "en": "Store plan and aisle search by keyword.",
-    "ar": "مخطط المتجر والبحث عن الممر بالكلمة."
+    "ar": "مخطط المتجر والبحث عن الممر بالكلمة.",
+    "de": "Filialplan und Abteilungssuche per Stichwort.",
+    "ru": "План магазина и поиск отдела по слову."
   },
   "keyword": {
     "tr": "reyon, mağaza planı",
     "en": "aisle, store map",
-    "ar": "ممر، خريطة المتجر"
+    "ar": "ممر، خريطة المتجر",
+    "de": "Regal, Ladenplan",
+    "ru": "стеллаж, план магазина"
   },
   "path": "hizmetler",
   "icon": "shelves",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Reyonlar",
     "en": "Aisles",
-    "ar": "الممرات"
+    "ar": "الممرات",
+    "de": "Gänge",
+    "ru": "Отделы"
   },
   "date": "2026-11-16T18:02:13.116Z",
   "update": "2026-11-16T18:10:35.387Z"

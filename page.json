@@ -5,12 +5,16 @@
       "name": {
         "tr": "Reyonlar",
         "en": "Aisles",
-        "ar": "الممرات"
+        "ar": "الممرات",
+        "de": "Gänge",
+        "ru": "Отделы"
       },
       "description": {
         "tr": "Mağaza planı ve kelimeyle reyon bulma.",
         "en": "Store plan and aisle search by keyword.",
-        "ar": "مخطط المتجر والبحث عن الممر بالكلمة."
+        "ar": "مخطط المتجر والبحث عن الممر بالكلمة.",
+        "de": "Filialplan und Abteilungssuche per Stichwort.",
+        "ru": "План магазина и поиск отдела по слову."
       },
       "path": "hizmetler",
       "icon": "shelves",
@@ -30,7 +34,9 @@
       "name": {
         "tr": "Mağaza",
         "en": "Store",
-        "ar": "المتجر"
+        "ar": "المتجر",
+        "de": "Filiale",
+        "ru": "Магазин"
       },
       "status": "play",
       "id": "hakkimizda",
@@ -51,7 +57,9 @@
       "description": {
         "tr": "Raf kurallarımız ve mağaza panosu (kurgusal).",
         "en": "Our shelf rules and store board (fictional).",
-        "ar": "قواعد الرفوف ولوحة المتجر (افتراضية)."
+        "ar": "قواعد الرفوف ولوحة المتجر (افتراضية).",
+        "de": "Unsere Regalregeln und das Ladetafel (fiktiv).",
+        "ru": "Наши правила размещения на полках и доска магазина (вымышленные)."
       }
     },
     {
@@ -59,12 +67,16 @@
       "name": {
         "tr": "Markalar",
         "en": "Brands",
-        "ar": "العلامات"
+        "ar": "العلامات",
+        "de": "Marken",
+        "ru": "Бренды"
       },
       "description": {
         "tr": "Raflardaki kurgusal markalar, harf dizini ve arama.",
         "en": "Fictional brands on our shelves, with letter index and search.",
-        "ar": "علامات افتراضية على رفوفنا مع فهرس الحروف والبحث."
+        "ar": "علامات افتراضية على رفوفنا مع فهرس الحروف والبحث.",
+        "de": "Fiktive Marken in den Regalen, Buchstabenindex und Suche.",
+        "ru": "Вымышленные бренды на полках, алфавитный указатель и поиск."
       },
       "path": "referanslar",
       "icon": "stars",
@@ -84,7 +96,9 @@
       "name": {
         "tr": "İletişim",
         "en": "Contact",
-        "ar": "اتصل بنا"
+        "ar": "اتصل بنا",
+        "de": "Kontakt",
+        "ru": "Контакты"
       },
       "status": "play",
       "id": "iletisim",
@@ -105,7 +119,9 @@
       "description": {
         "tr": "Adres, telefon, WhatsApp ve mağaza saatleri.",
         "en": "Address, phone, WhatsApp and store hours.",
-        "ar": "العنوان والهاتف وواتساب وساعات المتجر."
+        "ar": "العنوان والهاتف وواتساب وساعات المتجر.",
+        "de": "Adresse, Telefon, WhatsApp und Öffnungszeiten.",
+        "ru": "Адрес, телефон, WhatsApp и часы работы магазина."
       }
     }
   ],

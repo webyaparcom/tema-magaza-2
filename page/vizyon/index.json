@@ -3,17 +3,23 @@
   "name": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "description": {
     "tr": "Vizyonumuz",
     "en": "Our vision",
-    "ar": "رؤيتنا"
+    "ar": "رؤيتنا",
+    "de": "Unsere Vision",
+    "ru": "Наше видение"
   },
   "keyword": {
     "tr": "Vizyon",
     "en": "vision, our vision, goals",
-    "ar": "الرؤية, رؤيتنا, الأهداف"
+    "ar": "الرؤية, رؤيتنا, الأهداف",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "path": "vizyon",
   "icon": "visibility",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Vizyonumuz</h2>\n<p>Teknoloji alışverişinde kimsenin raf arasında kaybolmadığı bir mağaza olmak.</p>",
     "en": "<h2>Our vision</h2>\n<p>To be a store where nobody gets lost between the shelves when buying technology.</p>",
-    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون متجرًا لا يضيع فيه أحد بين الرفوف عند شراء التقنية.</p>"
+    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون متجرًا لا يضيع فيه أحد بين الرفوف عند شراء التقنية.</p>",
+    "de": "<h2>Unsere Vision</h2>\n<p>Ein Geschäft zu sein, in dem sich beim Technikkauf niemand zwischen den Regalen verirrt.</p>",
+    "ru": "<h2>Наше видение</h2>\n<p>Быть магазином, где при покупке техники никто не теряется между стеллажами.</p>"
   },
   "title": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "date": "2026-11-16T18:02:12.962Z",
   "update": "2026-11-16T18:10:35.409Z",
