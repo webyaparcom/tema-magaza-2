@@ -3,17 +3,23 @@
   "name": {
     "tr": "Markalar",
     "en": "Brands",
-    "ar": "العلامات"
+    "ar": "العلامات",
+    "de": "Marken",
+    "ru": "Бренды"
   },
   "description": {
     "tr": "Raflardaki kurgusal markalar, harf dizini ve arama.",
     "en": "Fictional brands on our shelves, with letter index and search.",
-    "ar": "علامات افتراضية على رفوفنا مع فهرس الحروف والبحث."
+    "ar": "علامات افتراضية على رفوفنا مع فهرس الحروف والبحث.",
+    "de": "Fiktive Marken in den Regalen, Buchstabenindex und Suche.",
+    "ru": "Вымышленные бренды на полках, алфавитный указатель и поиск."
   },
   "keyword": {
     "tr": "marka",
     "en": "brand",
-    "ar": "علامة"
+    "ar": "علامة",
+    "de": "Marke",
+    "ru": "бренд"
   },
   "path": "referanslar",
   "icon": "stars",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Markalar",
     "en": "Brands",
-    "ar": "العلامات"
+    "ar": "العلامات",
+    "de": "Marken",
+    "ru": "Бренды"
   },
   "date": "2026-11-16T18:02:13.128Z",
   "update": "2026-11-16T18:10:35.398Z"

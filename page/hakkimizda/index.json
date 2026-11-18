@@ -2,7 +2,9 @@
   "name": {
     "tr": "Mağaza",
     "en": "Store",
-    "ar": "المتجر"
+    "ar": "المتجر",
+    "de": "Filiale",
+    "ru": "Магазин"
   },
   "status": "play",
   "category": "",
@@ -23,7 +25,9 @@
   "description": {
     "tr": "Raf kurallarımız ve mağaza panosu (kurgusal).",
     "en": "Our shelf rules and store board (fictional).",
-    "ar": "قواعد الرفوف ولوحة المتجر (افتراضية)."
+    "ar": "قواعد الرفوف ولوحة المتجر (افتراضية).",
+    "de": "Unsere Regalregeln und das Ladetafel (fiktiv).",
+    "ru": "Наши правила размещения на полках и доска магазина (вымышленные)."
   },
   "spot": {
     "tr": "",
@@ -34,12 +38,16 @@
   "title": {
     "tr": "Mağaza",
     "en": "Store",
-    "ar": "المتجر"
+    "ar": "المتجر",
+    "de": "Filiale",
+    "ru": "Магазин"
   },
   "keyword": {
     "tr": "hakkımızda",
     "en": "about",
-    "ar": "من نحن"
+    "ar": "من نحن",
+    "de": "Über uns",
+    "ru": "О нас"
   },
   "text": {},
   "update": "2026-11-16T18:10:35.393Z",

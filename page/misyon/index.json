@@ -3,17 +3,23 @@
   "name": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "description": {
     "tr": "Misyonumuz",
     "en": "Our mission",
-    "ar": "مهمتنا"
+    "ar": "مهمتنا",
+    "de": "Unsere Mission",
+    "ru": "Наша миссия"
   },
   "keyword": {
     "tr": "Misyon",
     "en": "mission, our mission, corporate responsibility",
-    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية"
+    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "path": "misyon",
   "icon": "flag",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Misyonumuz</h2>\n<p>Doğru cihazı rafta denetip mağazada kurarak teslim etmek.</p>",
     "en": "<h2>Our mission</h2>\n<p>To let customers try the right device on the shelf and hand it over set up in store.</p>",
-    "ar": "<h2>مهمتنا</h2>\n<p>أن نتيح تجربة الجهاز المناسب على الرف ونسلّمه مُعدًّا في المتجر.</p>"
+    "ar": "<h2>مهمتنا</h2>\n<p>أن نتيح تجربة الجهاز المناسب على الرف ونسلّمه مُعدًّا في المتجر.</p>",
+    "de": "<h2>Unsere Mission</h2>\n<p>Das richtige Gerät im Regal zu prüfen und es im Geschäft eingerichtet zu übergeben.</p>",
+    "ru": "<h2>Наша миссия</h2>\n<p>Проверять нужное устройство на полке и передавать его настроенным прямо в магазине.</p>"
   },
   "title": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "date": "2026-11-16T18:02:12.962Z",
   "update": "2026-11-16T18:10:35.407Z",

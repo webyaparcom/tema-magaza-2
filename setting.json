@@ -4,12 +4,16 @@
   "description": {
     "tr": "Voltaj Mağaza: dizüstü, ses, giyilebilir, güç ve oyun ürünleriyle teknoloji mağazası. Aradığınız ürünün reyonunu haritadan bulun, stok için yazın. Demo site; içerik kurgusaldır.",
     "en": "Voltaj Mağaza: an electronics store with laptop, audio, wearable, power and gaming products. Find the right aisle on the store map and message us about stock. Demo site; content is fictional.",
-    "ar": "فولتاج: متجر تقنية بمنتجات الحواسيب المحمولة والصوتيات والأجهزة القابلة للارتداء والطاقة والألعاب. اعثر على الممر المناسب في خريطة المتجر وراسلنا عن المخزون. موقع تجريبي؛ المحتوى افتراضي."
+    "ar": "فولتاج: متجر تقنية بمنتجات الحواسيب المحمولة والصوتيات والأجهزة القابلة للارتداء والطاقة والألعاب. اعثر على الممر المناسب في خريطة المتجر وراسلنا عن المخزون. موقع تجريبي؛ المحتوى افتراضي.",
+    "de": "Voltaj Mağaza: Technikgeschäft mit Laptop-, Audio-, Wearable-, Power- und Gaming-Produkten. Finden Sie die richtige Abteilung auf der Ladenkarte und schreiben Sie uns zur Lagerbestandsabfrage. Demo-Seite; Inhalte sind fiktiv.",
+    "ru": "Voltaj Mağaza: магазин электроники с ноутбуками, аудио, носимыми устройствами, источниками питания и игровыми товарами. Найдите нужный отдел на карте магазина и напишите нам по наличию. Демо-сайт; контент фиктивный."
   },
   "keyword": {
     "tr": "teknoloji mağazası, dizüstü, kulaklık, akıllı saat, powerbank, reyon haritası",
     "en": "electronics store, laptop, headphones, smartwatch, power bank, store map",
-    "ar": "متجر إلكترونيات، حاسوب محمول، سماعات، ساعة ذكية، بطارية متنقلة، خريطة المتجر"
+    "ar": "متجر إلكترونيات، حاسوب محمول، سماعات، ساعة ذكية، بطارية متنقلة، خريطة المتجر",
+    "de": "Technikgeschäft, Laptop, Kopfhörer, Smartwatch, Powerbank, Abteilungsplan",
+    "ru": "магазин техники, ноутбук, наушники, умные часы, повербанк, карта отделов"
   },
   "category": "Kurumsal",
   "name": "Voltaj Mağaza",
@@ -18,15 +22,27 @@
     "tr": true,
     "en": true,
     "ar": true,
-    "de": false,
-    "ru": false,
+    "de": true,
+    "ru": true,
     "es": false,
     "fr": false,
     "it": false,
     "ja": false,
     "zh": false,
     "ko": false,
-    "pt": false
+    "pt": false,
+    "fa": false,
+    "he": false,
+    "ur": false,
+    "nl": false,
+    "pl": false,
+    "uk": false,
+    "az": false,
+    "ka": false,
+    "el": false,
+    "bg": false,
+    "ro": false,
+    "hi": false
   },
   "logo": "logo.png",
   "multi": false,
